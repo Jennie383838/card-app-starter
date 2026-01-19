@@ -23,11 +23,11 @@ export async function getCards() {
   return res.json();
 }
 
-export function addCard(card) {
+export async function addCard(card) {
   // TODO: implement POST /addcard
 }
 
-export function updateCard(id, card) {
+export async function updateCard(id, card) {
   // TODO: implement PUT /updatecard/:id
   try { 
     const response = await fetch(`/cards/${id}/edit`, { 
