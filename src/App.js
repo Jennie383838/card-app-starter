@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -12,12 +13,10 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cards" element={<CardList />}>
-          <Route path="/new" element={<AddCard />} />
-          <Route path=":id/edit" element={<EditCard />}/>
-        </Route>
+        <Route path="/cards" element={<CardList />} />
+          <Route path=":cardsId" element={<CardList />} />
         {/* TODO: Complete the routes */}
-      </Routes> 
+      </Routes>
     </BrowserRouter>
   );
 }

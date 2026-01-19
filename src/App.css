@@ -1,9 +1,12 @@
-/*
-  Styling is intentionally NOT provided.
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-  TODO: Design your own UI:
-  - layout (grid/cards/table)
-  - typography
-  - buttons/forms
-  - spacing and responsiveness
-*/
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
