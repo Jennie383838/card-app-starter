@@ -5,5 +5,7 @@ export default function Home() {
     - display instructions
     - link to Cards page
     - style as a landing page */
-  return <main></main>;
+  return <main>
+    <h1> Welcome to the Card App</h1>
+  </main>;
 }
