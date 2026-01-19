@@ -13,7 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cards" element={<CardList />} />
-        <Route path=":cardsId" element={<CardList />} />
+          <Route path=":cardsId" element={<CardList />} />
         {/* TODO: Complete the routes */}
       </Routes>
     </BrowserRouter>
