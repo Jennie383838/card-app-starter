@@ -12,9 +12,12 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cards" element={<CardList />} />
+        <Route path="/cards" element={<CardList />}>
+          <Route path="/new" element={<AddCard />} />
+          <Route path=":id/edit" element={<EditCard />}/>
+        </Route>
         {/* TODO: Complete the routes */}
-      </Routes>
+      </Routes> 
     </BrowserRouter>
   );
 }
