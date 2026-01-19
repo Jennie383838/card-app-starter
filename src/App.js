@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import CardList from "./pages/CardList";
 import AddCard from "./pages/AddCard";
 import EditCard from "./pages/EditCard";
+import Error404 from "./pages/404";
 import "./App.css";
 
 export default function App() {
@@ -13,8 +14,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cards" element={<CardList />} />
-          <Route path=":cardsId" element={<CardList />} />
+        <Route path="/new" element={<AddCard />} />
+        <Route path="/cards/:id/edit" element={<EditCard />} />
+        <Route path="*" element={<Error404 />} />
         {/* TODO: Complete the routes */}
+        
       </Routes>
     </BrowserRouter>
   );
