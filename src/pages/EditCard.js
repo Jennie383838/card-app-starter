@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CardForm from "../components/CardForm";
 import { getCards, updateCard } from "../services/api";
-import './EditCard.css'
+import './Editcard.css'
 
 export default function EditCard() {
   /* TODO: Complete the EditCard page
@@ -11,5 +11,7 @@ export default function EditCard() {
     - handle loading, busy, and error states
     - style as a form UI */
 
-  return <main></main>;
+  return <main>
+    <CardForm />
+  </main>;
 }

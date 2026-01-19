@@ -18,7 +18,7 @@ const API_URL = process.env.REACT_APP_API_URL || "";
 
 export async function getCards() {
   // GET /allcards (provided as reference)
-  const res = await fetch(`${API_URL}/allcards`);
+  const res = await fetch(`${API_URL}/cards`);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
@@ -29,6 +29,23 @@ export function addCard(card) {
 
 export function updateCard(id, card) {
   // TODO: implement PUT /updatecard/:id
+  try { 
+    const response = await fetch(`/cards/${id}/edit`, { 
+      method: 'PUT', 
+      headers: { 'Content-Type': 'application/json', }, 
+      body: JSON.stringify(card), 
+    }); 
+    
+    if (!response.ok) { 
+      throw new Error(`Failed to update card: ${response.statusText}`); 
+    } 
+    
+    const updatedCard = await response.json(); 
+    return updatedCard; 
+  } catch (error) { 
+    console.error('Error updating card:', error); 
+    throw error; 
+  }
 }
 
 export function deleteCard(id) {
