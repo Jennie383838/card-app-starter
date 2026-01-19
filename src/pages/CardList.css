@@ -1,0 +1,113 @@
+/* Main container for card list */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fdf6fb; /* soft pastel background */
+}
+
+/* Individual card container */
+.card-container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Card hover effect */
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(201, 99, 182, 0.25); /* soft purple shadow */
+}
+
+/* Card image */
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* Card content */
+.card-content {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #C963B6; /* soft purple accent */
+  margin-bottom: 5px;
+}
+
+.card-id {
+  font-size: 0.9rem;
+  color: #8e4f9a; /* slightly darker purple for contrast */
+}
+
+/* Card action buttons */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Edit button */
+.btn-edit {
+  background-color: #F8C8E5; /* soft pink */
+  color: #5a1b61;
+}
+
+.btn-edit:hover {
+  background-color: #e3aee0;
+  transform: scale(1.05);
+}
+
+/* Delete button */
+.btn-delete {
+  background-color: #C963B6; /* purple accent */
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #b0549e;
+  transform: scale(1.05);
+}
+
+/* Disabled delete */
+.btn-delete:disabled {
+  background-color: #d1a3ce;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-grid {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .card-image {
+    height: 180px;
+  }
+}
