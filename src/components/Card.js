@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 
 export default function Card({ card, onDelete, busy }) {
-  // guard clause
   if (!card) return null;
 
   return (
     <div className="card-container">
       <img
-        src={card.image || "https://via.placeholder.com/150"}
-        alt={card.name || "Card image"}
+        src={
+          card.card_pic ||
+          "https://placehold.co/300x300/ffe4f0/ff69b4?text=♡+Card+♡"
+        }
+        alt={card.card_name || "Card image"}
         className="card-image"
       />
 
       <div className="card-content">
-        <h3 className="card-title">{card.name}</h3>
+        <h3 className="card-title">{card.card_name}</h3>
         <p className="card-id">ID: {card.id}</p>
       </div>
 
