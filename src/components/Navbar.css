@@ -1,63 +1,50 @@
-/* Container for navbar */
 .container {
-  width: 90%;
-  max-width: 1200px;          /* slightly bigger for professional layouts */
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #e0e0e0; /* softer gray */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* subtle shadow */
-  background-color: #fff; /* crisp clean background */
+  padding: 20px 5%;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-/* Navigation links wrapper */
 nav {
   display: flex;
-  gap: 30px; /* more breathing space between links */
+  gap: 30px;
 }
 
-/* Individual links */
 nav a {
   text-decoration: none;
-  color: #555;           /* subtle dark gray */
-  font-weight: 500;      /* slightly stronger weight */
+  color: #555;         
+  font-weight: 500;  
   font-size: 1rem;
   position: relative;
-  transition: all 0.3s ease; /* smooth hover */
+  transition: color 0.3s ease;
   padding: 5px 0;
 }
 
-/* Hover effect */
-nav a::after {
+nav a::after, .nav-active::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -3px;
-  width: 0%;
+  width: 0;
   height: 2px;
   background-color: #CFC677;
   transition: width 0.3s ease;
 }
 
-nav a:hover::after {
-  width: 100%; /* underline expands */
+nav a:hover::after, .nav-active::after {
+  width: 100%;
 }
 
-nav a:hover {
-  color: #282828; /* darker text on hover */
+nav a:hover, .nav-active {
+  color: #282828;
 }
 
-/* Active link styling */
 .nav-active {
-  color: #CFC677;
   font-weight: 600;
-}
-
-.nav-active::after {
-  width: 100%; /* underline stays on active */
+  color: #CFC677;
 }

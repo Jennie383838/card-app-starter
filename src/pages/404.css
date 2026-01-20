@@ -1,8 +1,12 @@
 .Header-404{
-    font-weight: 500;
+    font-weight: 800;
     margin-bottom: 0.5rem;
+    text-align: center;
+    margin-top: 50;
 }
 
-.Text-404{
-
+.Msg{
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
