@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import CardForm from "../components/CardForm";
 import { getCards, updateCard } from "../services/api";
 
-export default function Edit() {
+export default function EditCard() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -12,7 +12,7 @@ export default function Edit() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
 
-  // load existing card
+  // load card
   useEffect(() => {
     getCards()
       .then((res) => {
@@ -32,12 +32,13 @@ export default function Edit() {
       });
   }, [id]);
 
-  // submit update
-  const handleSubmit = async (updatedCard) => {
+  // submit edit
+  const handleSubmit = async (updatedData) => {
     setBusy(true);
+    setError(null);
     try {
-      await updateCard(id, updatedCard);
-      navigate("/");
+      await updateCard(id, updatedData);
+      navigate("/cards"); // change if your route differs
     } catch {
       setError("Failed to update card");
     } finally {
@@ -45,11 +46,13 @@ export default function Edit() {
     }
   };
 
-  if (loading) return <main>Loading...</main>;
-  if (error) return <main>{error}</main>;
+  if (loading) return <p>loading = true</p>;
+  if (error) return <p>{error}</p>;
 
   return (
-    <main>
+    <main className="form-page">
+      <h1>Edit Card</h1>
+
       <CardForm
         initialData={card}
         onSubmit={handleSubmit}
