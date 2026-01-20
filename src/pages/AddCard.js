@@ -10,5 +10,26 @@ export default function AddCard() {
     - handle busy and error states
     - style as a form UI */
 
-  return <main></main>;
+    const navigate = useNavigate();
+
+    function handleSubmit(e) {
+        e.preventDefault(); 
+        alert("Registered Successfully!");
+    }
+
+  return (
+    <div className="App">
+      <h1 className="form">Register Page</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Username" className="input" required />
+        <input type="email" placeholder="Email" className="input" required />
+        <input type="text" placeholder="Phone Number" className="input" required />
+        <input type="text" placeholder="Address" className="input" required />
+        <button type="submit" className="button">Register</button>
+        <button onClick={() => navigate(-1)} className="backbutton">
+        Go Back
+      </button>
+      </form>
+    </div>
+  );
 }
