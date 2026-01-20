@@ -11,9 +11,7 @@ export default function CardList() {
   useEffect(() => {
     getCards()
       .then((res) => {
-        // IMPORTANT FIX
-        const data = Array.isArray(res) ? res : res.data;
-        setCards(data || []);
+        setCards(res || []);
         setLoading(false);
       })
       .catch(() => {
@@ -40,7 +38,6 @@ export default function CardList() {
   return (
     <main className="card-grid">
       {cards.length === 0 && <p>No cards found</p>}
-
       {cards.map((card) => (
         <Card
           key={card.id}

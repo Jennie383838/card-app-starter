@@ -17,10 +17,9 @@ const API_URL = process.env.REACT_APP_API_URL || "";
  */
 
 export async function getCards() {
-  // GET /allcards (provided as reference)
-  const res = await fetch(`${API_URL}cards`);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
+    const res = await fetch(`${API_URL}/cards`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
 }
 
 export async function addCard(card) {

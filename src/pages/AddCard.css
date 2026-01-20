@@ -1,52 +1,85 @@
-.App { 
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  width: 100%;
-  padding: 40px 0;
-}
-
-.form {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-}
-
-input {
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+/* Container for the Add Card form */
+.add-card-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  background: #fff0f5; /* soft pink-lavender background */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
+  color: #333;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
+/* Form title */
+.add-card-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #C963B6; /* soft purple accent */
+  font-weight: 600;
+}
+
+/* Input fields */
+.add-card-container input,
+.add-card-container textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0cfe8;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fffaf8;
+}
+
+/* Input focus effect */
+.add-card-container input:focus,
+.add-card-container textarea:focus {
+  border-color: #C963B6;
+  box-shadow: 0 0 10px rgba(201, 99, 182, 0.3);
+  outline: none;
+}
+
+/* Labels */
+.add-card-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #8e4f9a;
+}
+
+/* Submit button */
+.add-card-container button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #C963B6;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #555;
+.add-card-container button:hover {
+  background-color: #b0549e;
+  box-shadow: 0 5px 15px rgba(201, 99, 182, 0.4);
 }
 
-.backbutton {
-  text-decoration: none;
-  display: inline-block;
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
+/* Optional small text / helper text */
+.add-card-container small {
+  display: block;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  color: #a678b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .add-card-container {
+    padding: 30px 20px;
+    margin: 30px 15px;
+  }
 }

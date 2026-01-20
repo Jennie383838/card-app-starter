@@ -4,32 +4,34 @@ import CardForm from "../components/CardForm";
 import { addCard } from "../services/api";
 
 export default function AddCard() {
-  /* TODO: Complete the AddCard page
-    - display a form for adding a new card (use the CardForm component to display the form)
-    - handle form submission to call addCard API
-    - handle busy and error states
-    - style as a form UI */
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleSubmit = async (formValues) => {
+    setBusy(true);
+    setError(null);
 
-    function handleSubmit(e) {
-        e.preventDefault(); 
-        alert("Registered Successfully!");
+    try {
+      await addCard(formValues);
+      navigate("/"); // redirect to home or list page after success
+    } catch (err) {
+      setError(err.message || "Failed to add card");
+    } finally {
+      setBusy(false);
     }
+  };
 
   return (
-    <div className="App">
-      <h1 className="form">Register Page</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Username" className="input" required />
-        <input type="email" placeholder="Email" className="input" required />
-        <input type="text" placeholder="Phone Number" className="input" required />
-        <input type="text" placeholder="Address" className="input" required />
-        <button type="submit" className="button">Register</button>
-        <button onClick={() => navigate(-1)} className="backbutton">
-        Go Back
-      </button>
-      </form>
-    </div>
+    <main style={{ padding: "2rem" }}>
+      <h1>Add a New Card</h1>
+      <CardForm
+        values={{ card_name: "", card_pic: "" }}
+        onSubmit={handleSubmit}
+        busy={busy}
+        error={error}
+        submitText="Add Card"
+      />
+    </main>
   );
 }
