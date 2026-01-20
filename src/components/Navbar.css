@@ -32,7 +32,7 @@ nav a::after, .nav-active::after {
   bottom: -3px;
   width: 0;
   height: 2px;
-  background-color: #CFC677;
+  background-color: #ff69b4;
   transition: width 0.3s ease;
 }
 
@@ -46,5 +46,5 @@ nav a:hover, .nav-active {
 
 .nav-active {
   font-weight: 600;
-  color: #CFC677;
+  color: #ff69b4;
 }
