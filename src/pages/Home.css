@@ -188,3 +188,34 @@ body {
   transform: none;
   box-shadow: none;
 }
+/* ===== FADE IN ANIMATION ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== APPLY ANIMATION ===== */
+.home-title,
+.home-subtitle,
+.btn-view {
+  opacity: 0; /* start hidden */
+  animation: fadeInUp 2.2s ease forwards;
+}
+
+.home-title {
+  animation-delay: 2.2s;
+}
+
+.home-subtitle {
+  animation-delay: 2.5s;
+}
+
+.btn-view {
+  animation-delay: 2.8s;
+}
