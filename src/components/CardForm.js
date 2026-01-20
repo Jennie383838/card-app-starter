@@ -26,7 +26,7 @@ export default function CardForm({
           <input type="text" name="name" required/>
         </label>
         <br></br><br></br>
-        <button onSubmit={updateCard}>
+        <button>
           Save Changes
         </button>
   </form>;
