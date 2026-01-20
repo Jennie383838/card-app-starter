@@ -1,3 +1,5 @@
+import { updateCard } from "../services/api";
+
 export default function CardForm({
   values,
   onChange,
@@ -14,26 +16,18 @@ export default function CardForm({
   - style as a form UI */
 
   return <form>
-          <label>
-        Name:
-        <input type="text" name="card_name" value={values.card_name || ""} onChange={(e) => onChange("card_name", e.target.value)}
-          required />
-      </label>
-
-      <label>
-        URL of Card Picture:
-        <input type="url" name="card_pic" value={values.card_pic || ""} onChange={(e) => onChange("card_pic", e.target.value)}
-          required/>
-      </label>
-
-      {error && (
-        <div style={{ color: "red", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
-
-      <button type="submit" disabled={busy} >
-        {busy ? "Submitting..." : submitText}
-      </button>
+        <label>
+          Name:
+          <input type="text" name="name" required/>
+        </label>
+        <br></br><br></br>
+        <label>
+          URL for Card Picture:
+          <input type="text" name="name" required/>
+        </label>
+        <br></br><br></br>
+        <button onSubmit={updateCard}>
+          Save Changes
+        </button>
   </form>;
 }

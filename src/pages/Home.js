@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
+
+
 
 export default function Home() {
-  /* TODO: Design and complete the Home page
-    - display instructions
-    - link to Cards page
-    - style as a landing page */
-  return <main>
-    <h1> Welcome to the Card App</h1>
-  </main>;
+  const navigate = useNavigate();
+  return <div className="home-container" >
+    <h1 className="h1"> Welcome to Das Card App</h1>
+    <button onClick={() => navigate("/cards")} className="view-btn">
+      View Cards
+    </button>
+  </div>;
 }
