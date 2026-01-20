@@ -11,7 +11,5 @@ export default function AddCard() {
     - style as a form UI */
 
   return <main>
-    <CardForm 
-    onSubmit={addCard}/>
   </main>;
 }
