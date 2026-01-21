@@ -27,6 +27,21 @@ export async function getCards() {
 
 export async function addCard(card) {
   // TODO: implement POST /addcard
+  try{
+    const response = await fetch(`${API_URL}/addcard`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(card),
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to add card: ${response.statusText}`);
+    }
+    const newCard = await response.json();
+    return newCard;
+  } catch (error) {
+    console.error('Error adding card:', error);
+    throw error;
+  }
 }
 
 export async function updateCard(id, card) {
