@@ -1,55 +1,69 @@
-form {
-    font-family: 'Inter', sans-serif; /* modern and professional */
+
+/* Wrapper for the edit form */
+.edit-card-form {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-width: 420px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
-    align-items: center; /* center form elements horizontally */
-    justify-content: flex-start;
-    gap: 1rem; /* space between inputs/buttons */
-    width: 100%;
-    max-width: 400px; /* keeps form compact on large screens */
-    margin: 2rem auto; /* centers the form on the page */
-    padding: 2rem;
-    background: #ffffff; /* clean white background */
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.3s ease;
+    gap: 1.4rem;
+    transition: box-shadow 0.25s ease;
 }
 
-form:hover {
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+.edit-card-form:hover {
+    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.09);
 }
 
-form input,
-form select,
-form textarea,
-form button {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border-color: #1c5edd;
-    box-shadow: 0 0 8px rgba(28, 94, 221, 0.3);
-}
-
-form button {
-    background: linear-gradient(135deg, #4e9af1, #1c5edd);
-    color: #fff;
-    border: none;
+/* Label styling */
+.edit-card-form label {
+    font-size: 0.95rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #444;
+    margin-bottom: 0.3rem;
 }
 
-form button:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 12px 28px rgba(30, 80, 180, 0.35);
+/* Inputs */
+.edit-card-form input,
+.edit-card-form select,
+.edit-card-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.edit-card-form input:focus,
+.edit-card-form select:focus,
+.edit-card-form textarea:focus {
+    background: #fff;
+    border-color: #4f7df2;
+    box-shadow: 0 0 8px rgba(79, 125, 242, 0.25);
+}
+
+/* Submit button */
+.edit-card-form button {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: linear-gradient(135deg, #ff5dbc, #ff2f92);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.edit-card-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(255, 95, 190, 0.3);
 }
