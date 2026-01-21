@@ -32,7 +32,6 @@ export default function EditCard() {
       });
   }, [id]);
 
-  // submit edit
   const handleSubmit = async (updatedData) => {
     setBusy(true);
     setError(null);
@@ -46,7 +45,7 @@ export default function EditCard() {
     }
   };
 
-  if (loading) return <p>loading = true</p>;
+  if (loading) return <main>Loading...</main>;
   if (error) return <p>{error}</p>;
 
   return (
