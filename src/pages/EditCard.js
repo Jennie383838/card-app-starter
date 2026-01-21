@@ -38,7 +38,7 @@ export default function EditCard() {
     setError(null);
     try {
       await updateCard(id, updatedData);
-      navigate("/card"); // change if your route differs
+      navigate("/cards");
     } catch {
       setError("Failed to update card");
     } finally {
