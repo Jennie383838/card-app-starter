@@ -47,7 +47,7 @@ export async function addCard(card) {
 export async function updateCard(id, card) {
   // TODO: implement PUT /updatecard/:id
   try { 
-    const response = await fetch(`/cards/${id}/edit`, { 
+    const response = await fetch(`${API_URL}/updatecard/${id}`, { 
       method: 'PUT', 
       headers: { 'Content-Type': 'application/json', }, 
       body: JSON.stringify(card), 
