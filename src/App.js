@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cards" element={<CardList />} />
         <Route path="/new" element={<AddCard />} />
-        <Route path="/cards/:id/edit" element={<EditCard />} />
+        <Route path="/edit/:id" element={<EditCard />} />
         <Route path="*" element={<Error404 />} />
         {/* TODO: Complete the routes */}
         

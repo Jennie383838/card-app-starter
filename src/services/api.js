@@ -16,14 +16,13 @@
  * - DELETE /deletecard/:id
  */
 
-const API_URL = "https://onlinecardappwebservice-iu6e.onrender.com"; // replace with your actual API URL
+const API_URL = "https://onlinecardappwebservice-iu6e.onrender.com";
 
 export async function getCards() {
     const res = await fetch(`${API_URL}/cards`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
 }
-
 
 export async function addCard(card) {
   // TODO: implement POST /addcard
@@ -47,7 +46,7 @@ export async function addCard(card) {
 export async function updateCard(id, card) {
   // TODO: implement PUT /updatecard/:id
   try { 
-    const response = await fetch(`/cards/${id}/edit`, { 
+    const response = await fetch(`${API_URL}/updatecard/${id}`, { 
       method: 'PUT', 
       headers: { 'Content-Type': 'application/json', }, 
       body: JSON.stringify(card), 
@@ -64,7 +63,6 @@ export async function updateCard(id, card) {
     throw error; 
   }
 }
-
 export function deleteCard(id) {
   // TODO: implement DELETE /deletecard/:id
 }
