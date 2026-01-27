@@ -14,6 +14,9 @@ export default function Navbar() {
         <NavLink to="/cards" className={getClass}>
           Cards
         </NavLink>
+        <NavLink to="/login" className={getClass}>
+          Login
+        </NavLink>
       </nav>
     </header>
   );
